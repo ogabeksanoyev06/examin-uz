@@ -2,7 +2,7 @@
   <div class="app-dropdown">
     <div class="flex flex-col gap-1">
       <label
-        class="label-text text-xs text-left font-medium peer-disabled:cursor-not-allowed"
+        class="label-text text-sm text-left font-medium mb-1 peer-disabled:cursor-not-allowed"
       >
         {{ optionLabel }}
         <span class="text-danger" v-if="required">*</span>
