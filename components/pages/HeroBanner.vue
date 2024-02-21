@@ -34,6 +34,6 @@
 </template>
 <script>
 export default {
-  name: "HeroBanner",
+  name: 'HeroBanner',
 };
 </script>

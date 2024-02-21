@@ -1,9 +1,9 @@
 <script setup>
-import { defineEmits, onMounted, watchEffect } from "vue";
+import { defineEmits, onMounted, watchEffect } from 'vue';
 defineProps({
   maxWidth: {
     type: String,
-    default: "300",
+    default: '300',
   },
   modalFooter: {
     type: Boolean,
@@ -14,18 +14,18 @@ defineProps({
     default: false,
   },
 });
-const emit = defineEmits(["close"]);
+const emit = defineEmits(['close']);
 const closeModal = () => {
-  emit("close");
+  emit('close');
 };
 
 onMounted(() => {
   if (document.body) {
     watchEffect(() => {
       if (props.show) {
-        document.body.classList.add("modal-open");
+        document.body.classList.add('modal-open');
       } else {
-        document.body.classList.remove("modal-open");
+        document.body.classList.remove('modal-open');
       }
     });
   }

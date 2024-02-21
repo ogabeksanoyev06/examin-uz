@@ -143,23 +143,23 @@
 </template>
 
 <script setup>
-import AppButton from "@/components/shared-components/AppButton";
-import AppInput from "@/components/shared-components/AppInput";
-import AppSelect from "@/components/shared-components/AppSelect.vue";
+import AppButton from '@/components/shared-components/AppButton';
+import AppInput from '@/components/shared-components/AppInput';
+import AppSelect from '@/components/shared-components/AppSelect.vue';
 
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from 'vue';
 
-const search = ref("");
-let selectedCity = ref("");
+const search = ref('');
+let selectedCity = ref('');
 const cities = ref([
-  { name: "New York", code: "NY" },
-  { name: "Rome", code: "RM" },
-  { name: "London", code: "LDN" },
-  { name: "Istanbul", code: "IST" },
-  { name: "Paris", code: "PRS" },
-  { name: "London", code: "LDN" },
-  { name: "Istanbul", code: "IST" },
-  { name: "Paris", code: "PRS" },
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM' },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
+  { name: 'Paris', code: 'PRS' },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
+  { name: 'Paris', code: 'PRS' },
 ]);
 const updateSelectedCity = (newValue) => {
   selectedCity.value = newValue;

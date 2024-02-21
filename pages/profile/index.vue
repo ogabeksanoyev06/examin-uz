@@ -32,7 +32,7 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         <AppInput
-          inputName="Parol"
+          inputName="oldPassword"
           :inputType="oldPasswordField ? 'text' : 'password'"
           v-model="user.password"
           required
@@ -81,7 +81,7 @@
           </template>
         </AppInput>
         <AppInput
-          inputName="Parol"
+          inputName="newPassword"
           :inputType="newPasswordField ? 'text' : 'password'"
           v-model="user.password"
           required
@@ -180,30 +180,28 @@
         </AppInput>
       </div>
     </form>
-    <AppButton @click="createPayment" color="secondary" class="w-fit mt-5">
-      O'zgartirish
-    </AppButton>
+    <AppButton color="secondary" class="w-fit mt-5"> O'zgartirish </AppButton>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-
 definePageMeta({
-  layout: "cabinet",
+  layout: 'cabinet',
 });
 
-import AppButton from "../../components/shared-components/AppButton.vue";
-import AppInput from "../../components/shared-components/AppInput.vue";
-import AppSelect from "../../components/shared-components/AppSelect.vue";
+import { ref } from 'vue';
+
+import AppButton from '../../components/shared-components/AppButton.vue';
+import AppInput from '../../components/shared-components/AppInput.vue';
+import AppSelect from '../../components/shared-components/AppSelect.vue';
 
 const user = ref({
-  login: "",
-  phone: "",
-  lastname: "",
-  firstname: "",
-  password: "",
-  newPassword: "",
+  login: '',
+  phone: '',
+  lastname: '',
+  firstname: '',
+  password: '',
+  newPassword: '',
 });
 const checked = ref(false);
 const oldPasswordField = ref(false);

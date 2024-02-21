@@ -161,9 +161,9 @@
 </template>
 
 <script setup>
-import AppButton from "~/components/shared-components/AppButton.vue";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import AppButton from '~/components/shared-components/AppButton.vue';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const currentTab = ref(1);
 const router = useRouter();

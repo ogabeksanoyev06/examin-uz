@@ -1,19 +1,19 @@
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors');
 module.exports = {
   content: [
-    "./components/**/*.{vue,js,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
-    "./app.vue",
+    './components/**/*.{vue,js,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+    './app.vue',
   ],
-  mode: "jit",
+  mode: 'jit',
   theme: {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem",
+        DEFAULT: '1rem',
       },
     },
     extend: {
@@ -85,12 +85,12 @@ module.exports = {
         },
       },
       screens: {
-        xs: "376px",
-        sm: "576px",
-        md: "768px",
-        lg: "960px",
-        xl: "1440px",
-        "2xl": "1920px",
+        xs: '376px',
+        sm: '576px',
+        md: '768px',
+        lg: '960px',
+        xl: '1440px',
+        '2xl': '1920px',
       },
     },
   },

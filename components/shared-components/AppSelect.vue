@@ -98,11 +98,11 @@
 const props = defineProps({
   selectedValue: {
     type: String,
-    default: "",
+    default: '',
   },
   placeholder: {
     type: String,
-    default: "",
+    default: '',
   },
   optionLabel: String,
 
@@ -120,7 +120,7 @@ const props = defineProps({
 const show = ref(false);
 const selected = ref(props.selectedValue);
 
-const emit = defineEmits(["update:selectedValue"]);
+const emit = defineEmits(['update:selectedValue']);
 
 const toggleDropdown = () => {
   show.value = !show.value;
@@ -132,7 +132,7 @@ const closeDropdown = () => {
 
 const selectItem = (item) => {
   selected.value = item.name;
-  emit("update:selectedValue", item.name);
+  emit('update:selectedValue', item.name);
   show.value = false;
 };
 </script>

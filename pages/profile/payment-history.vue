@@ -43,7 +43,7 @@
 
 <script setup>
 definePageMeta({
-  layout: "cabinet",
+  layout: 'cabinet',
 });
 </script>
 

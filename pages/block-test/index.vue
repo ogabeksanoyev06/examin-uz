@@ -45,17 +45,19 @@
         </table>
       </div>
       <div class="mt-8 flex justify-center">
-        <AppButton color="secondary" variant="tertiary" size="lg">
-          Testni boshlash
-        </AppButton>
+        <NuxtLink to="/test">
+          <AppButton color="secondary" variant="tertiary" size="lg">
+            Testni boshlash
+          </AppButton>
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import AppButton from "../../components/shared-components/AppButton.vue";
-import AppSelect from "../../components/shared-components/AppSelect.vue";
+import AppButton from '../../components/shared-components/AppButton.vue';
+import AppSelect from '../../components/shared-components/AppSelect.vue';
 </script>
 
 <style lang="scss" scoped></style>

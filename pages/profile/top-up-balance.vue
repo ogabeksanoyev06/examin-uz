@@ -24,7 +24,6 @@
         @keypress="isNumber($event)"
       />
       <AppButton
-        @click="createPayment"
         color="secondary"
         class="w-fit"
         :disabled="paymentAmount <= 4999 || paymentAmount === null"
@@ -36,9 +35,9 @@
 </template>
 
 <script setup>
-import AppInput from "../../components/shared-components/AppInput.vue";
-import AppButton from "../../components/shared-components/AppButton.vue";
-import { ref } from "vue";
+import AppInput from '../../components/shared-components/AppInput.vue';
+import AppButton from '../../components/shared-components/AppButton.vue';
+import { ref } from 'vue';
 
 const selectedPaymentType = ref(1);
 const paymentAmount = ref(null);
@@ -55,12 +54,9 @@ const isNumber = (evt) => {
     return true;
   }
 };
-const createPayment = () => {
-  console.log("sasas");
-};
 
 definePageMeta({
-  layout: "cabinet",
+  layout: 'cabinet',
 });
 </script>
 

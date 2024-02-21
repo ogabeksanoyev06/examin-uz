@@ -6,7 +6,7 @@
       >
         <div data-aos="zoom-in">
           <div
-            class="p-[50px_30px] bg-white shadow-[0_2px_15px_rgba(0,0,0,0.1)] rounded group transition-all hover:bg-primary hover:shadow-none hover:p-[30px_30px_70px_30px] ease-in-out duration-300"
+            class="min-h-[250px] p-[50px_30px] bg-white shadow-[0_2px_15px_rgba(0,0,0,0.1)] rounded group transition-all hover:bg-primary hover:shadow-none hover:p-[30px_30px_70px_30px] ease-in-out duration-300"
           >
             <span
               class="text-2xl text-primary font-bold group-hover:text-white"
@@ -24,7 +24,7 @@
 
         <div data-aos="zoom-in">
           <div
-            class="p-[50px_30px] bg-white shadow-[0_2px_15px_rgba(0,0,0,0.1)] rounded group transition-all hover:bg-primary hover:shadow-none hover:p-[30px_30px_70px_30px] ease-in-out duration-300"
+            class="min-h-[250px] p-[50px_30px] bg-white shadow-[0_2px_15px_rgba(0,0,0,0.1)] rounded group transition-all hover:bg-primary hover:shadow-none hover:p-[30px_30px_70px_30px] ease-in-out duration-300"
           >
             <span
               class="text-2xl text-primary font-bold group-hover:text-white"
@@ -41,7 +41,7 @@
         </div>
         <div data-aos="zoom-in">
           <div
-            class="p-[50px_30px] bg-white shadow-[0_2px_15px_rgba(0,0,0,0.1)] rounded group transition-all hover:bg-primary hover:shadow-none hover:p-[30px_30px_70px_30px] ease-in-out duration-300"
+            class="min-h-[250px] p-[50px_30px] bg-white shadow-[0_2px_15px_rgba(0,0,0,0.1)] rounded group transition-all hover:bg-primary hover:shadow-none hover:p-[30px_30px_70px_30px] ease-in-out duration-300"
           >
             <span
               class="text-2xl text-primary font-bold group-hover:text-white"

@@ -1,9 +1,11 @@
-@import "../abstracts/mixins";
-@import "../abstracts/variables";
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
 
 .a-btn {
   $trans: 0.15s;
-  transition: color $trans linear, background-color $trans linear,
+  transition:
+    color $trans linear,
+    background-color $trans linear,
     transform $trans ease-out;
   cursor: pointer;
   user-select: none;
@@ -30,7 +32,7 @@
   &:before {
     transition: opacity $trans linear;
     display: block;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -82,7 +84,7 @@
     $cl-a
       in (
         (
-          "main",
+          'main',
           $color-main,
           lighten($color-main, 5%),
           darken($color-main, 5%),
@@ -91,7 +93,7 @@
           white
         ),
         (
-          "white",
+          'white',
           white,
           lighten(white, 5%),
           darken(white, 5%),
@@ -100,7 +102,7 @@
           $text-color-default
         ),
         (
-          "secondary",
+          'secondary',
           $color-secondary,
           lighten($color-secondary, 5%),
           darken($color-secondary, 5%),
@@ -109,7 +111,7 @@
           #fff
         ),
         (
-          "transparent",
+          'transparent',
           transparent,
           rgba($color-main, 0.1),
           rgba($color-main, 0.15),
@@ -118,7 +120,7 @@
           inherit
         ),
         (
-          "grey",
+          'grey',
           #edf5ff,
           #edf5ff,
           darken(#edf5ff, 5%),
@@ -149,7 +151,7 @@
     &:after {
       transition: border #{$trans} linear;
       display: block;
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       right: 0;

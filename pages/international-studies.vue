@@ -90,8 +90,8 @@
 </template>
 
 <script setup>
-import AppButton from "../components/shared-components/AppButton.vue";
-import { useRouter } from "vue-router";
+import AppButton from '../components/shared-components/AppButton.vue';
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 

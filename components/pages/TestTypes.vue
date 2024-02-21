@@ -18,12 +18,7 @@
         <div
           class="grid grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          <div
-            v-for="(item, i) in 6"
-            :key="i"
-            data-aos="fade-up"
-            :data-aos-duration="(i + 1) * 100"
-          >
+          <div>
             <div class="bg-white border rounded p-6 box relative z-[0]">
               <img
                 src="https://primefaces.org/cdn/primevue/images/landing/features/icon-components.svg"
@@ -44,13 +39,15 @@
 </template>
 <script>
 export default {
-  name: "TestTypes",
+  name: 'TestTypes',
 };
 </script>
 <style scoped>
 .box {
-  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.02),
-    0px 28px 28px 0px rgba(0, 0, 0, 0.02), 0px 63px 38px 0px rgba(0, 0, 0, 0.01);
+  box-shadow:
+    0px 7px 15px 0px rgba(0, 0, 0, 0.02),
+    0px 28px 28px 0px rgba(0, 0, 0, 0.02),
+    0px 63px 38px 0px rgba(0, 0, 0, 0.01);
 }
 .box:after,
 .box:before {
@@ -58,7 +55,7 @@ export default {
   border: 2px solid var(--blue-600);
   border-radius: 4px;
   bottom: -2px;
-  content: "";
+  content: '';
   left: -2px;
   opacity: 0;
   position: absolute;

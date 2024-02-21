@@ -89,32 +89,32 @@
 </template>
 
 <script setup>
-import AppHeader from "~/components/layouts/default/header/AppHeader.vue";
-import { ref, watch, onMounted } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import AppHeader from '~/components/layouts/default/header/AppHeader.vue';
+import { ref, watch, onMounted } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
 const route = useRoute();
 
-const currentRoute = ref("asas");
+const currentRoute = ref('');
 const highlighter = ref(null);
 
 const menu = ref([
   {
-    title: "Asosiy malumotlar",
-    path: "profile",
+    title: 'Asosiy malumotlar',
+    path: 'profile',
   },
   {
-    title: "Hisobni to`ldirish",
-    path: "profile-top-up-balance",
+    title: 'Hisobni to`ldirish',
+    path: 'profile-top-up-balance',
   },
   {
-    title: "To`lovlar tarixi",
-    path: "profile-payment-history",
+    title: 'To`lovlar tarixi',
+    path: 'profile-payment-history',
   },
   {
-    title: "Test natijalari",
-    path: "profile-tests-results",
+    title: 'Test natijalari',
+    path: 'profile-tests-results',
   },
 ]);
 
@@ -122,7 +122,7 @@ const highlightButton = (id) => {
   const button = document.getElementById(id);
   const buttonPosition = button.getBoundingClientRect();
 
-  const container = document.querySelector(".mini-x-scroll");
+  const container = document.querySelector('.mini-x-scroll');
   const containerPosition = container.getBoundingClientRect();
 
   const buttonLeftRelativeToContainer =
@@ -150,11 +150,8 @@ const updateActiveButton = () => {
 };
 
 watch(route, updateActiveButton);
-onMounted(updateActiveButton);
 
-definePageMeta({
-  layout: "cabinet",
-});
+onMounted(updateActiveButton);
 </script>
 <style>
 .mini-x-scroll::-webkit-scrollbar {

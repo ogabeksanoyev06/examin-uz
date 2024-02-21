@@ -4,28 +4,29 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    <Toaster position="top-center" richColors closeButton />
   </div>
 </template>
 
 <script setup>
 useHead({
   htmlAttrs: {
-    lang: "en",
+    lang: 'en',
   },
-  link: [{ rel: "icon", type: "image/png", href: "/favicon.ico" }],
+  link: [{ rel: 'icon', type: 'image/png', href: '/favicon.ico' }],
 });
 
-const title = "Users";
-const description = "";
-const image = "";
+const title = 'Users';
+const description = '';
+const image = '';
 useSeoMeta({
   ogTitle: title,
   ogDescription: description,
   ogImage: image,
-  ogUrl: "",
+  ogUrl: '',
   twitterTitle: title,
   twitterDescription: description,
   twitterImage: image,
-  twitterCard: "summary_large_image",
+  twitterCard: 'summary_large_image',
 });
 </script>

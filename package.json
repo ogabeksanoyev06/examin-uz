@@ -22,13 +22,17 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "@vee-validate/rules": "^4.12.5",
     "axios": "^1.6.7",
     "click-outside-vue3": "^4.0.1",
+    "pinia": "^2.1.7",
+    "prettier": "3.2.5",
     "primevue": "^3.48.0",
     "sass": "^1.70.0",
     "sass-loader": "^14.0.0",
     "tailwind-variants": "^0.1.20",
-    "vee-validate": "^4.12.5"
+    "vee-validate": "^4.12.5",
+    "vue-sonner": "^1.0.3"
   }
 }

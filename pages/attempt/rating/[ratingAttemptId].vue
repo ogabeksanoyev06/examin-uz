@@ -102,13 +102,15 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
-import AppButton from "@/components/shared-components/AppButton.vue";
+import { useRouter } from 'vue-router';
+import AppButton from '@/components/shared-components/AppButton.vue';
 
 const router = useRouter();
+
 const goToLink = () => {
   router.push({ path: `/attempt/answer/0` });
 };
+
 const goToCompare = () => {
   router.push({ path: `/attempt/compare/0` });
 };

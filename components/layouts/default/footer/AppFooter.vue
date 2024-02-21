@@ -3,13 +3,7 @@
     <div class="container">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         <div class="flex flex-col justify-between">
-          <nuxt-link to="/">
-            <img
-              src="https://www.apro.uz/images/APro.jpg"
-              alt=""
-              class="max-h-[50px] mb-2"
-            />
-          </nuxt-link>
+          <nuxt-link to="/"> logo </nuxt-link>
           <ul class="text-gray-500">
             <li class="flex items-center gap-1 py-1">
               <span class="font-bold">Telefon:</span>
