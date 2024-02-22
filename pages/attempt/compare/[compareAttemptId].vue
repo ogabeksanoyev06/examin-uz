@@ -35,41 +35,45 @@
           Kontrakt: 100
         </app-button>
       </div>
-
-      <div
-        class="shadow mb-4 p-4 gap-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-      >
+      <div class="max-w-[500px] mx-auto sm:mb-5">
         <AppInput
           inputName="search"
           v-model="search"
-          label="Nom bo'yicha qidirish"
+          placeholder="Nom bo'yicha qidirish"
         />
-        <AppSelect
-          optionLabel="Viloyatni tanlang"
-          :options="cities"
-          :selectedValue="selectedCity"
-          @update:selectedValue="updateSelectedCity"
-        />
-        <AppSelect
-          optionLabel="Oliygohni tanlang"
-          :options="cities"
-          :selectedValue="selectedCity"
-          @update:selectedValue="updateSelectedCity"
-        />
-        <AppSelect
-          optionLabel="Ta'lim yo'nalishini tanlang"
-          :options="cities"
-          :selectedValue="selectedCity"
-          @update:selectedValue="updateSelectedCity"
-        />
-        <AppSelect
-          optionLabel="Ta'lim shakli"
-          :options="cities"
-          :selectedValue="selectedCity"
-          @update:selectedValue="updateSelectedCity"
-        />
-        <div class="card flex justify-content-center"></div>
       </div>
+      <div class="shadow mb-4 p-4 flex flex-col gap-3">
+        <div
+          class="gap-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        >
+          <AppSelect
+            optionLabel="Viloyatni tanlang"
+            :options="cities"
+            :selectedValue="selectedCity"
+            @update:selectedValue="updateSelectedCity"
+          />
+          <AppSelect
+            optionLabel="Oliygohni tanlang"
+            :options="cities"
+            :selectedValue="selectedCity"
+            @update:selectedValue="updateSelectedCity"
+          />
+          <AppSelect
+            optionLabel="Ta'lim yo'nalishini tanlang"
+            :options="cities"
+            :selectedValue="selectedCity"
+            @update:selectedValue="updateSelectedCity"
+          />
+          <AppSelect
+            optionLabel="Ta'lim shakli"
+            :options="cities"
+            :selectedValue="selectedCity"
+            @update:selectedValue="updateSelectedCity"
+          />
+          <div class="card flex justify-content-center"></div>
+        </div>
+      </div>
+
       <div class="relative overflow-x-auto">
         <table class="w-full text-sm text-left rtl:text-right">
           <thead>

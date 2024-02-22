@@ -11,7 +11,7 @@
       <div class="relative overflow-x-auto">
         <table class="w-full text-sm text-left rtl:text-right">
           <thead class="">
-            <tr class="border-b border-gray">
+            <tr class="bg-primary-900 text-white">
               <th scope="col" class="px-6 py-4">Majburiy fanlar</th>
               <th scope="col" class="px-6 py-4">To'g'ri javoblar</th>
               <th scope="col" class="px-6 py-4">Ball</th>
@@ -43,7 +43,7 @@
                 50
               </td>
             </tr>
-            <tr class="text-xs border-b border-b-gray">
+            <tr class="bg-primary-900 text-white">
               <th scope="col" class="px-6 py-4">Asosiy fanlar</th>
               <th scope="col" class="px-6 py-4">To'g'ri javoblar</th>
               <th scope="col" class="px-6 py-4">Ball</th>

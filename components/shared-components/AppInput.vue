@@ -37,7 +37,7 @@
                 input({ variant }),
                 classes,
                 {
-                  '!border-danger !bg-danger-50  focus:!border-danger focus:!bg-white ':
+                  '!border-danger !bg-danger-50   focus:!border-[#dc2626] focus:!shadow-[inset_0_0_0_1px_#dc2626] focus:!bg-white ':
                     errors.length > 0,
                 },
               ]"
@@ -143,10 +143,10 @@ const props = defineProps({
   classes: String,
 });
 const input = tv({
-  base: ` w-full h-10 outline-none appearance-none bg-gray-100  text-sm border
-   rounded p-[0.5rem_0.75rem] border-transparent cursor-pointer focus:border-primary
+  base: `w-full h-10 outline-none appearance-none bg-gray-100  text-sm border
+   rounded p-[0.5rem_0.75rem] border-transparent cursor-pointer focus:border-primary focus:border-[#3b71ca] focus:shadow-[inset_0_0_0_1px_#3b71ca] 
  focus:bg-gray-50 disabled:bg-gray-200 disabled:placeholder:text-[#71717A]
-  disabled:cursor-not-allowed transition-all ease-in-out duration-300`,
+  disabled:cursor-not-allowed transition-all ease-in-out duration-300 placeholder:text-black placeholder:text-xs`,
   variants: {
     variant: {},
   },

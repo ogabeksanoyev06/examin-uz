@@ -28,7 +28,7 @@
       <div class="relative overflow-x-auto">
         <table class="w-full text-sm text-left rtl:text-right">
           <tbody>
-            <tr class="bg-primary-50 text-primary">
+            <tr class="bg-primary-900 text-white">
               <th scope="col" class="px-6 py-4">#</th>
               <th scope="col" class="px-6 py-4">Majburiy fanlar</th>
               <th scope="col" class="px-6 py-4">Testlar soni</th>
@@ -57,7 +57,7 @@
               <th scope="col" colspan="2" class="px-6 py-4">Umumiy ball</th>
               <th scope="col" colspan="2" class="px-6 py-4">153</th>
             </tr>
-            <tr class="bg-primary-50 text-primary">
+            <tr class="bg-primary-900 text-white">
               <th scope="col" class="px-6 py-4">#</th>
               <th scope="col" class="px-6 py-4">Asosiy fanlar</th>
               <th scope="col" class="px-6 py-4">Testlar soni</th>
@@ -79,7 +79,7 @@
               <th scope="col" colspan="2" class="px-6 py-4">Umumiy ball</th>
               <th scope="col" colspan="2" class="px-6 py-4">153</th>
             </tr>
-            <tr class="bg-primary text-white">
+            <tr class="border text-primary-900">
               <th scope="col" colspan="2" class="px-6 py-4">
                 5ta bo'yicha umumiy ball:
               </th>
@@ -90,11 +90,9 @@
       </div>
 
       <div class="mt-8 flex justify-center">
-        <NuxtLink to="/test">
-          <AppButton color="secondary" variant="tertiary" size="lg">
-            Testni boshlash
-          </AppButton>
-        </NuxtLink>
+        <AppButton color="secondary" variant="tertiary" size="lg">
+          Testni boshlash
+        </AppButton>
       </div>
     </div>
   </div>

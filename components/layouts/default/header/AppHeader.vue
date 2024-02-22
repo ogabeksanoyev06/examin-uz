@@ -94,18 +94,208 @@
               />
             </svg>
           </button>
-          <AppButton
-            color="primary"
-            variant="tertiary"
-            @click="$router.push({ name: 'profile' })"
-          >
-            Profile
-          </AppButton>
+          <AppDropdown>
+            <template #trigger="{ onToggle }">
+              <div
+                @click="onToggle"
+                class="flex items-center relative cursor-pointer"
+              >
+                <div
+                  class="rounded-full relative overflow-hidden shrink-0 before:border-[2px] before:border-solid before:border-white-100 before:opacity-70 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:rounded-full w-8 h-8"
+                >
+                  <div class="h-full">
+                    <div
+                      class="flex items-center justify-center text-white h-full w-full object-cover text-sm bg-primary-900"
+                    >
+                      OS
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+            <template #content="{ closeMenu }">
+              <ul class="p-1 min-w-[12rem]">
+                <div
+                  class="flex items-center gap-3 px-2 py-1.5 text-sm font-semibold"
+                >
+                  <div
+                    class="rounded-full relative overflow-hidden shrink-0 before:border-[2px] before:border-solid before:border-white-100 before:opacity-70 before:absolute before:w-full before:h-full before:rounded-full w-8 h-8"
+                  >
+                    <div class="h-full">
+                      <div
+                        class="flex items-center justify-center text-white h-full w-full object-cover text-sm bg-primary-900"
+                      >
+                        OS
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col space-y-1 whitespace-nowrap">
+                    <p class="text-sm font-medium leading-none">
+                      Og'abek Sanoyev
+                    </p>
+                    <p class="text-xs leading-none text-muted-foreground">
+                      +998 93 081 91 40
+                    </p>
+                  </div>
+                </div>
+                <div role="separator" class="-mx-1 my-1 h-px bg-gray-100"></div>
+                <NuxtLink to="/profile">
+                  <li
+                    class="flex items-center relative text-sm font-medium rounded-sm px-2 py-1.5 transition-all duration-300 cursor-pointer whitespace-nowrap hover:bg-secondary-100 hover:text-secondary"
+                    :class="{
+                      'bg-secondary-100 text-secondary':
+                        router.name === 'profile',
+                    }"
+                    @click="closeMenu"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-4 h-4 mr-2"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="10" r="3"></circle>
+                      <path
+                        d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"
+                      ></path>
+                    </svg>
+                    Mening profilim
+                  </li>
+                </NuxtLink>
+                <nuxt-link to="/profile/top-up-balance">
+                  <li
+                    class="flex items-center relative text-sm font-medium rounded-sm px-2 py-1.5 transition-all duration-300 cursor-pointer whitespace-nowrap hover:bg-secondary-100 hover:text-secondary"
+                    :class="{
+                      'bg-secondary-100 text-secondary':
+                        router.name === 'profile-top-up-balance',
+                    }"
+                    @click="closeMenu"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-4 h-4 mr-2"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                      <path d="M12 18V6"></path>
+                    </svg>
+                    Hisobni to'ldirish
+                  </li>
+                </nuxt-link>
+                <nuxt-link to="/profile/tests-results">
+                  <li
+                    class="flex items-center relative text-sm font-medium rounded-sm px-2 py-1.5 transition-all duration-300 cursor-pointer whitespace-nowrap hover:bg-secondary-100 hover:text-secondary"
+                    :class="{
+                      'bg-secondary-100 text-secondary':
+                        router.name === 'profile-tests-results',
+                    }"
+                    @click="closeMenu"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-4 h-4 mr-2"
+                    >
+                      <polygon
+                        points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+                      ></polygon>
+                    </svg>
+                    Mening natijalarim
+                  </li>
+                </nuxt-link>
+
+                <nuxt-link to="/profile/payment-history">
+                  <li
+                    class="flex items-center relative text-sm font-medium rounded-sm px-2 py-1.5 transition-all duration-300 cursor-pointer whitespace-nowrap hover:bg-secondary-100 hover:text-secondary"
+                    :class="{
+                      'bg-secondary-100 text-secondary':
+                        router.name === 'profile-payment-history',
+                    }"
+                    @click="closeMenu"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-4 h-4 mr-2"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                      <path d="M12 18V6"></path>
+                    </svg>
+                    To'lovlar tarixi
+                  </li>
+                </nuxt-link>
+
+                <div role="separator" class="-mx-1 my-1 h-px bg-gray-100"></div>
+                <li
+                  class="flex items-center relative text-sm font-medium rounded-sm px-2 py-1.5 transition-all duration-300 cursor-pointer whitespace-nowrap hover:bg-danger-100 hover:text-danger"
+                  @click="
+                    () => {
+                      closeMenu();
+                      logout();
+                    }
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-4 h-4 mr-2"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" x2="9" y1="12" y2="12"></line>
+                  </svg>
+                  Hisobdan chiqish
+                </li>
+              </ul>
+            </template>
+          </AppDropdown>
         </div>
       </div>
     </div>
   </header>
 </template>
 <script setup>
+import { useRoute } from 'vue-router';
+
+import AppDropdown from '~/components/shared-components/AppDropdown.vue';
 import AppButton from '../../../shared-components/AppButton.vue';
+
+const router = useRoute();
 </script>

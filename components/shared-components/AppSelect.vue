@@ -2,7 +2,7 @@
   <div class="app-dropdown">
     <div class="flex flex-col gap-1">
       <label
-        class="label-text text-sm text-left font-medium mb-1 peer-disabled:cursor-not-allowed"
+        class="label-text text-xs text-left font-medium peer-disabled:cursor-not-allowed"
       >
         {{ optionLabel }}
         <span class="text-danger" v-if="required">*</span>
@@ -138,18 +138,6 @@ const selectItem = (item) => {
 </script>
 
 <style lang="scss" scoped>
-.dropdown-enter-active,
-.dropdown-leave-active {
-  opacity: 1;
-  transform: scaleY(1);
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  transform-origin: center top;
-}
-.dropdown-enter-from,
-.dropdown-leave-to {
-  opacity: 0;
-  transform: scaleY(0);
-}
 .scroll-style::-webkit-scrollbar {
   width: 3px;
 }
