@@ -81,6 +81,9 @@
   </div>
 </template>
 <script setup>
+
+import { authService } from '~/services/authService.js';
+
 definePageMeta({
   layout: 'auth',
 });
@@ -97,7 +100,15 @@ const passwordField = ref(true);
 const passwordSee = () => {
   passwordField.value = !passwordField.value;
 };
-function loginToSystem() {
-  console.log('aa');
+async function loginToSystem() {
+  try {
+    const user = await authService.login({
+      name: "wdawdawda",
+      password: "wdawdawda"
+    });
+    console.log(user.data);
+  } catch (error) {
+    console.error('Error fetching user:', error);
+  }
 }
 </script>
