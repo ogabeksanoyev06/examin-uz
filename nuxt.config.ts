@@ -15,7 +15,6 @@ export default defineNuxtConfig({
       mode: 'client',
       ssr: false,
     },
-    { src: './plugins/axios.js' },
     {
       src: './plugins/vee-validate-rules.js',
     },
@@ -28,10 +27,16 @@ export default defineNuxtConfig({
       mode: 'client',
     },
   ],
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@pinia/nuxt'],
-  pinia: {
-    storesDirs: ['./stores/**', './custom-folder/stores/**'],
-  },
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+  ],
+ 
+
   postcss: {
     plugins: {
       tailwindcss: {},

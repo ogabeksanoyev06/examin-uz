@@ -27,12 +27,9 @@
     <WhyUs />
   </div>
 </template>
-<script>
+<script setup>
 import HeroBanner from '~/components/pages/HeroBanner.vue';
 import TestTypes from '~/components/pages/TestTypes.vue';
 import CtaBanner from '~/components/pages/CtaBanner.vue';
 import WhyUs from '~/components/pages/WhyUs.vue';
-export default {
-  components: { HeroBanner, TestTypes, CtaBanner, WhyUs },
-};
 </script>

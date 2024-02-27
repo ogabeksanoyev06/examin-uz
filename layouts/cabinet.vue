@@ -3,6 +3,7 @@
     <AppHeader />
     <main class="min-h-[calc(100vh-64px)] py-8">
       <div class="container">
+        {{router}}
         <div
           class="bg-white pt-3 px-3 sm:pt-6 sm:px-6 rounded-2xl shadow-[rgba(0,0,0,0.16)_0px_1px_4px] mb-8"
         >
@@ -58,8 +59,8 @@
                   v-for="(item, i) in menu"
                   :key="i"
                   :id="i + 1"
-                  @click="highlightButton(i + 1), goToLink(item.path)"
-                  :class="{ '!text-primary': currentRoute === item.path }"
+                  @click="highlightButton(i + 1), goToLink(item.name)"
+                  :class="{ '!text-primary': currentRoute === item.name }"
                 >
                   {{ item.title }}
                 </button>
@@ -91,46 +92,49 @@ const highlighter = ref(null);
 const menu = ref([
   {
     title: 'Asosiy malumotlar',
-    path: 'profile',
+    name: 'profile',
   },
   {
     title: 'Hisobni to`ldirish',
-    path: 'profile-top-up-balance',
+    name: 'profile-top-up-balance',
   },
   {
     title: 'To`lovlar tarixi',
-    path: 'profile-payment-history',
+    name: 'profile-payment-history',
   },
   {
     title: 'Test natijalari',
-    path: 'profile-tests-results',
+    name: 'profile-tests-results',
   },
 ]);
 
 const highlightButton = (id) => {
   const button = document.getElementById(id);
-  const buttonPosition = button.getBoundingClientRect();
-
   const container = document.querySelector('.mini-x-scroll');
-  const containerPosition = container.getBoundingClientRect();
 
-  const buttonLeftRelativeToContainer =
-    buttonPosition.left - containerPosition.left;
+  if (button && container) {
+    const buttonPosition = button.getBoundingClientRect();
+    const containerPosition = container.getBoundingClientRect();
 
-  if (highlighter.value) {
-    highlighter.value.style.width = `${buttonPosition.width}px`;
-    highlighter.value.style.transform = `translateX(${buttonLeftRelativeToContainer}px)`;
+    const buttonLeftRelativeToContainer =
+      buttonPosition.left - containerPosition.left;
+
+    if (highlighter.value) {
+      highlighter.value.style.width = `${buttonPosition.width}px`;
+      highlighter.value.style.transform = `translateX(${buttonLeftRelativeToContainer}px)`;
+    }
   }
 };
 
-const goToLink = (path) => {
-  router.push({ name: path });
+
+const goToLink = (name) => {
+  router.push({ name: name });
 };
 
 const updateActiveButton = () => {
   currentRoute.value = route.name;
   const activeButton = menu.value.find(
-    (item) => item.path === currentRoute.value
+    (item) => item.name === currentRoute.value
   );
   if (activeButton) {
     const id = menu.value.indexOf(activeButton) + 1;

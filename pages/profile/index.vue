@@ -1,11 +1,11 @@
 <template>
   <div class="general-information">
     <h4 class="text-xl sm:text-2xl font-semibold mb-4">Asosiy malumotlar</h4>
-    <form action="" class="">
+    <form action="" class="shadow p-4">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-6">
-        <AppInput v-model="user.firstname" inputName="firstname" label="Ism" />
+        <AppInput v-model="user.first_name" inputName="firstname" label="Ism" />
         <AppInput
-          v-model="user.lastname"
+          v-model="user.last_name"
           inputName="lastname"
           label="Familiya"
         />
@@ -24,13 +24,13 @@
         <AppSelect optionLabel="Tumanni tanlang" />
         <AppSelect optionLabel="Maktabni tanlang" disabled />
       </div>
-      <div class="inline-flex items-center gap-1 mb-3">
+      <!-- <div class="inline-flex items-center gap-1 mb-3">
         <input type="checkbox" id="change_password" v-model="checked" />
         <label for="change_password" class="text-sm font-medium">
           Parolni o'zgartirish
         </label>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+      </div> -->
+      <!-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         <AppInput
           inputName="oldPassword"
           :inputType="oldPasswordField ? 'text' : 'password'"
@@ -178,7 +178,7 @@
             </svg>
           </template>
         </AppInput>
-      </div>
+      </div> -->
     </form>
     <AppButton color="secondary" class="w-fit mt-5"> O'zgartirish </AppButton>
   </div>
@@ -190,33 +190,31 @@ definePageMeta({
 });
 
 import { ref } from 'vue';
-
+import { profileService } from '~/services/profileService';
 import AppButton from '../../components/shared-components/AppButton.vue';
 import AppInput from '../../components/shared-components/AppInput.vue';
 import AppSelect from '../../components/shared-components/AppSelect.vue';
 
 const user = ref({
-  login: '',
-  phone: '',
-  lastname: '',
-  firstname: '',
-  password: '',
-  newPassword: '',
+  username: "",
+  first_name: "",
+  last_name: "",
+  father_name: "",
+  photo: "",
+  district: "",
+  school: "",
+  type: "applicant",
+  region: "",
+  balance: 0,
+  phone: ""
 });
-const checked = ref(false);
-const oldPasswordField = ref(false);
-const newPasswordField = ref(false);
-const newPasswordConfirmationField = ref(false);
+const loading = ref(false);
 
-const newConfirmationSee = () => {
-  newPasswordConfirmationField.value = !newPasswordConfirmationField.value;
-};
-const newPasswordSee = () => {
-  newPasswordField.value = !newPasswordField.value;
-};
-const oldPasswordSee = () => {
-  oldPasswordField.value = !oldPasswordField.value;
-};
+
+
+
+
+
 </script>
 
 <style lang="scss" scoped></style>

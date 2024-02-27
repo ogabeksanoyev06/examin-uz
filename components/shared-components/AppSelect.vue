@@ -69,7 +69,7 @@
                   :key="index"
                   :class="[
                     {
-                      '!bg-primary-50': item.name === selected,
+                      '!bg-primary-50': item.id === selected,
                     },
                   ]"
                   @click="selectItem(item)"
@@ -78,7 +78,7 @@
                     class="text-sm font-normal select-none"
                     :class="[
                       {
-                        'text-primary  !font-medium': item.name === selected,
+                        'text-primary  !font-medium': item.id === selected,
                       },
                     ]"
                   >
@@ -105,7 +105,6 @@ const props = defineProps({
     default: '',
   },
   optionLabel: String,
-
   required: {
     type: Boolean,
     default: false,
@@ -120,7 +119,7 @@ const props = defineProps({
 const show = ref(false);
 const selected = ref(props.selectedValue);
 
-const emit = defineEmits(['update:selectedValue']);
+const emit = defineEmits(['itemSelected']);
 
 const toggleDropdown = () => {
   show.value = !show.value;
@@ -131,8 +130,8 @@ const closeDropdown = () => {
 };
 
 const selectItem = (item) => {
-  selected.value = item.name;
-  emit('update:selectedValue', item.name);
+  selected.value = item.id;
+  emit('itemSelected', item);
   show.value = false;
 };
 </script>

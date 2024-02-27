@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nuxtjs/i18n": "^8.0.0",
     "@nuxtjs/tailwindcss": "^6.11.0",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "autoprefixer": "^10.4.17",
     "nuxt": "^3.9.3",
     "nuxt-aos": "^1.2.2",
@@ -24,9 +25,11 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
     "@vee-validate/rules": "^4.12.5",
+    "@vueuse/nuxt": "^10.8.0",
     "axios": "^1.6.7",
     "click-outside-vue3": "^4.0.1",
     "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "prettier": "3.2.5",
     "primevue": "^3.48.0",
     "sass": "^1.70.0",

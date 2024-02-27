@@ -70,12 +70,14 @@
             color="primary"
             @click="$router.push({ name: 'auth-login' })"
             class="hidden md:block"
+          
           >
             Tizimga kirish
           </AppButton>
           <button
             @click="$router.push({ name: 'auth-login' })"
             class="inline-flex items-center justify-center whitespace-nowrap rounded-md border bg-transparent shadow-sm h-8 w-8 md:hidden"
+          
           >
             <svg
               width="24"
@@ -94,7 +96,7 @@
               />
             </svg>
           </button>
-          <AppDropdown>
+          <AppDropdown >
             <template #trigger="{ onToggle }">
               <div
                 @click="onToggle"
@@ -293,9 +295,10 @@
 </template>
 <script setup>
 import { useRoute } from 'vue-router';
-
 import AppDropdown from '~/components/shared-components/AppDropdown.vue';
 import AppButton from '../../../shared-components/AppButton.vue';
 
 const router = useRoute();
+
+
 </script>

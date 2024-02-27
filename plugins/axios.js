@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((NuxtApp) => {
   const api = axios.create({
     baseURL: process.env.VUE_APP_BASE_URL,
     headers: { 'Content-Type': 'application/json' },
@@ -37,10 +37,9 @@ export default defineNuxtPlugin(() => {
       }
     }
   );
-
   return {
     provide: {
-      api,
+      axios: axios,
     },
   };
 });
