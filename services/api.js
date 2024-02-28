@@ -29,10 +29,10 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const token = access_token
-    if (token.value !== null) {
+    const token = access_token;
+    if (token.value !== '') {
       config.headers.Authorization = `Bearer ${token.value}`;
-      console.log('sasasa',access_token.value)
+      console.log('sasasa', access_token.value);
     }
     return config;
   },
@@ -44,7 +44,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response.data ?? { noData: 'empty data' },
   async (error) => {
-    if (error.response && error.response.status === 401) {
+    if (error.response && error.response.status === 403) {
       try {
         const response = await authService.refresh({
           refresh: refresh_token.value,

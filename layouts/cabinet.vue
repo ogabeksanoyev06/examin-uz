@@ -3,7 +3,6 @@
     <AppHeader />
     <main class="min-h-[calc(100vh-64px)] py-8">
       <div class="container">
-        {{router}}
         <div
           class="bg-white pt-3 px-3 sm:pt-6 sm:px-6 rounded-2xl shadow-[rgba(0,0,0,0.16)_0px_1px_4px] mb-8"
         >
@@ -27,9 +26,9 @@
                   class="text-primary-800 text-xl sm:text-2xl font-bold mb-1"
                   style="word-break: break-word"
                 >
-                  Og'abek Sanoyev
+                  {{ user.username }}
                 </h2>
-                <p class="text-gray text-base font-medium">+998 930819140</p>
+                <p class="text-gray text-base font-medium">+{{ user.phone }}</p>
               </div>
             </div>
             <div>
@@ -39,7 +38,9 @@
               >
                 Mening hisobim
               </h2>
-              <p class="text-gray text-base font-medium">20 000 so'm</p>
+              <p class="text-gray text-base font-medium">
+                {{ user.balance }} so'm
+              </p>
             </div>
             <div>
               <h2
@@ -82,12 +83,13 @@
 import AppHeader from '~/components/layouts/default/header/AppHeader.vue';
 import { ref, watch, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { profileService } from '~/services/profileService';
 
 const router = useRouter();
 const route = useRoute();
 
 const currentRoute = ref('');
-const highlighter = ref(null);
+const highlighter = ref({});
 
 const menu = ref([
   {
@@ -108,6 +110,10 @@ const menu = ref([
   },
 ]);
 
+const user = ref({});
+
+const loading = ref(false);
+
 const highlightButton = (id) => {
   const button = document.getElementById(id);
   const container = document.querySelector('.mini-x-scroll');
@@ -126,7 +132,6 @@ const highlightButton = (id) => {
   }
 };
 
-
 const goToLink = (name) => {
   router.push({ name: name });
 };
@@ -142,9 +147,25 @@ const updateActiveButton = () => {
   }
 };
 
+async function getUser() {
+  loading.value = true;
+  try {
+    const response = await profileService.user();
+    user.value = response;
+    console.log(response, 'sasa');
+  } catch (error) {
+    console.error('Error fetching user:', error);
+  } finally {
+    loading.value = false;
+  }
+}
+
 watch(route, updateActiveButton);
 
-onMounted(updateActiveButton);
+onMounted(() => {
+  updateActiveButton();
+  getUser();
+});
 </script>
 <style>
 .mini-x-scroll::-webkit-scrollbar {

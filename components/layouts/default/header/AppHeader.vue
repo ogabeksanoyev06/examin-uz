@@ -70,14 +70,14 @@
             color="primary"
             @click="$router.push({ name: 'auth-login' })"
             class="hidden md:block"
-          
+            v-if="!isLoggedIn()"
           >
             Tizimga kirish
           </AppButton>
           <button
             @click="$router.push({ name: 'auth-login' })"
             class="inline-flex items-center justify-center whitespace-nowrap rounded-md border bg-transparent shadow-sm h-8 w-8 md:hidden"
-          
+            v-if="!isLoggedIn()"
           >
             <svg
               width="24"
@@ -96,7 +96,7 @@
               />
             </svg>
           </button>
-          <AppDropdown >
+          <AppDropdown v-if="isLoggedIn()">
             <template #trigger="{ onToggle }">
               <div
                 @click="onToggle"
@@ -299,6 +299,5 @@ import AppDropdown from '~/components/shared-components/AppDropdown.vue';
 import AppButton from '../../../shared-components/AppButton.vue';
 
 const router = useRoute();
-
-
+const { isLoggedIn } = useAuth();
 </script>

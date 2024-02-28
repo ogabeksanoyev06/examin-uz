@@ -12,9 +12,18 @@ export default defineNuxtPlugin(() => {
     if (!value || !value.length) {
       return true;
     }
-    if (!/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/.test(value)) {
-      return "Maydon email formatda to'ldirilishi kerak!";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      return "Email manzilning to'g'ri formatda bo'lishi kerak!";
     }
+
+    // Domen nomini ajratib olish
+    const domain = value.split('@')[1];
+    const allowedDomains = ['gmail.com', 'yahoo.com', 'hotmail.com']; // Yoki qo'shimcha dominlar ro'yxati
+    if (!allowedDomains.includes(domain)) {
+      return 'Faqat gmail.com, yahoo.com, hotmail.com dominlariga ruxsat berilgan!';
+    }
+
     return true;
   });
 

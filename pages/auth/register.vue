@@ -167,9 +167,9 @@ definePageMeta({
 });
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { authService } from '~/services/authService';
 import AppButton from '~/components/shared-components/AppButton.vue';
 import AppInput from '~/components/shared-components/AppInput.vue';
-import { authService } from '~/services/authService';
 
 const { $toast } = useNuxtApp();
 

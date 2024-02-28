@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     {
       src: './plugins/vee-validate-components.js',
     },
+
     {
       src: './plugins/sonner.client.js',
       ssr: false,
@@ -30,12 +31,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
-    '@pinia/nuxt',
     '@vueuse/nuxt',
-    '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
+    'dayjs-nuxt',
   ],
- 
 
   postcss: {
     plugins: {
