@@ -96,7 +96,7 @@
 
 <script setup>
 const props = defineProps({
-  selectedValue: {
+  selectedId: {
     type: String,
     default: '',
   },
@@ -117,21 +117,37 @@ const props = defineProps({
   classes: String,
 });
 const show = ref(false);
-const selected = ref(props.selectedValue);
-
+const selected = ref(null);
+const selectedValue = ref('');
 const emit = defineEmits(['itemSelected']);
 
 const toggleDropdown = () => {
   show.value = !show.value;
+  if (!show.value && selected.value !== null) {
+    selectedValue.value =
+      options.find((option) => option.id === selected.value)?.name ||
+      placeholder;
+  }
 };
 
 const closeDropdown = () => {
   show.value = false;
 };
 
+watch(
+  () => selected,
+  (newValue, oldValue) => {
+    if (newValue !== oldValue && newValue !== null) {
+      selectedValue.value =
+        options.find((option) => option.id === newValue)?.name || placeholder;
+    }
+  }
+);
+
 const selectItem = (item) => {
   selected.value = item.id;
   emit('itemSelected', item);
+  selectedValue.value = item.name;
   show.value = false;
 };
 </script>

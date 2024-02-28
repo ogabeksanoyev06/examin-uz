@@ -85,11 +85,6 @@ import { ref, watch, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { profileService } from '~/services/profileService';
 
-definePageMeta({
-  middleware: ['auth'],
-  // or middleware: 'auth'
-});
-
 const router = useRouter();
 const route = useRoute();
 

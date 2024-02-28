@@ -36,9 +36,27 @@
             label="Email"
             rules="email"
           />
-          <AppSelect optionLabel="Viloyatni tanlang" />
-          <AppSelect optionLabel="Tumanni tanlang" />
-          <AppSelect optionLabel="Maktabni tanlang" disabled />
+
+          <AppSelect
+            optionLabel="Viloyatni tanlang"
+            :options="regions.options"
+            :selectedId="regions.id"
+            @itemSelected="changeRegion"
+          />
+          <AppSelect
+            optionLabel="Tumanni tanlang"
+            :options="districts.options"
+            :selectedId="districts.id"
+            @itemSelected="changeDistricts"
+            :disabled="regions.value === ''"
+          />
+          <AppSelect
+            optionLabel="Maktabni tanlang"
+            :options="schools.options"
+            :selectedId="schools.id"
+            @itemSelected="changeSchools"
+            :disabled="districts.value === ''"
+          />
         </div>
         <AppButton
           color="secondary"
@@ -66,11 +84,21 @@ import AppSelect from '../../components/shared-components/AppSelect.vue';
 
 const { $toast } = useNuxtApp();
 
-const regions = ref([]);
-
-const districts = ref([]);
-
-const schools = ref([]);
+const regions = ref({
+  options: [],
+  value: '',
+  id: 0,
+});
+const districts = ref({
+  options: [],
+  value: '',
+  id: 0,
+});
+const schools = ref({
+  options: [],
+  value: '',
+  id: 0,
+});
 
 const user = ref({
   username: '',
@@ -93,8 +121,8 @@ async function updateProfile() {
   form.append('first_name', user.value.first_name);
   form.append('last_name', user.value.last_name);
   form.append('email', user.value.email);
-  form.append('district', 1);
-  form.append('school', 1);
+  form.append('district', districts.value.id);
+  form.append('school', schools.value.id);
   form.append('type', user.value.type);
   form.append('phone', user.value.phone);
   try {
@@ -115,6 +143,9 @@ async function getUser() {
   try {
     const response = await profileService.user();
     user.value = response;
+    regions.value.id = response.district;
+    districts.value.id = response.district;
+    schools.value.id = response.school.id;
   } catch (error) {
     console.error('Error fetching user:', error);
   } finally {
@@ -125,35 +156,45 @@ async function getUser() {
 async function getRegions() {
   try {
     const response = await profileService.regions();
-    regions.value = response;
+    regions.value.options = response;
   } catch (error) {
     console.error('Error fetching user:', error);
   }
 }
-
-async function getDistricts() {
-  try {
-    const response = await profileService.districts(1);
-    districts.value = response;
-  } catch (error) {
-    console.error('Error fetching user:', error);
-  }
+function changeRegion(item) {
+  regions.value.value = item.name;
+  regions.value.id = item.id;
+  districts.value.value = '';
+  getDistricts(item.id);
 }
 
-async function getSchools() {
+async function getDistricts(regionId) {
   try {
-    const response = await profileService.schools(1);
-    schools.value = response;
+    const response = await profileService.districts(regionId);
+    districts.value.options = response;
   } catch (error) {
-    console.error('Error fetching user:', error);
+    console.error('', error);
+  }
+}
+function changeDistricts(item) {
+  districts.value.value = item.name;
+  districts.value.id = item.id;
+  schools.value.value = '';
+  getSchools(item.id);
+}
+
+async function getSchools(districtId) {
+  try {
+    const response = await profileService.schools(districtId);
+    schools.value.options = response;
+  } catch (error) {
+    console.error('', error);
   }
 }
 
 onMounted(() => {
   getUser();
   getRegions();
-  getDistricts();
-  getSchools();
 });
 </script>
 

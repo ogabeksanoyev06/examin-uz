@@ -4,7 +4,7 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-      <Toaster position="top-center" richColors closeButton />
+    <Toaster position="top-center" richColors closeButton />
   </div>
 </template>
 
