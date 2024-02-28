@@ -295,9 +295,16 @@
 </template>
 <script setup>
 import { useRoute } from 'vue-router';
+import { access_token, refresh_token } from '~/services/tokenService';
 import AppDropdown from '~/components/shared-components/AppDropdown.vue';
 import AppButton from '../../../shared-components/AppButton.vue';
 
-const router = useRoute();
 const { isLoggedIn } = useAuth();
+
+const router = useRoute();
+
+function logout() {
+  access_token.value = '';
+  refresh_token.value = '';
+}
 </script>
