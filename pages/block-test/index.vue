@@ -45,9 +45,11 @@
         </table>
       </div>
       <div class="mt-8 flex justify-center">
-        <AppButton color="secondary" variant="tertiary" size="lg">
-          Testni boshlash
-        </AppButton>
+        <nuxt-link to="/test">
+          <AppButton color="secondary" variant="tertiary" size="lg">
+            Testni boshlash
+          </AppButton>
+        </nuxt-link>
       </div>
     </div>
   </div>
